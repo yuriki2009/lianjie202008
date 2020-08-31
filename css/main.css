@@ -2,15 +2,17 @@
 	margin: 0px;
 	height: 0px;
 }
+
 #main{
 	background: url(../img/game_bg.jpg);
 	background-size:100% 100%;
-	width: 400px;
+	max-width: 400px;
 	height: 600px;
 	margin: auto;
 	position: relative;
 	margin-top: 0px;
 }
+
 .progress{
 	width: 222px;
 	height: 21px;
@@ -32,7 +34,7 @@
 .hit_img{
 	width: 108px;
 	height: 101px;
-	background: url(../img/z.png) no-repeat;
+	background: url(../img/e.png) no-repeat;
 	display: none;
 	position: absolute;
 }
@@ -40,31 +42,37 @@
 	width: 108px;
 	height: 101px;
 	display: none;
-	background: url(../img/a.png) no-repeat;
+	background: url(../img/b.png) no-repeat;
 	position: absolute;
 }
 .hit_img2{
 	width: 108px;
 	height: 101px;
 	display: none;
-	background: url(../img/b.png) no-repeat;
+	background: url(../img/d.png) no-repeat;
 	position: absolute;
 }
 .hit_img3{
 	width: 108px;
 	height: 101px;
 	display: none;
-	background: url(../img/c.png) no-repeat;
+	background: url(../img/g.png) no-repeat;
 	position: absolute;
 }
 .hit_img4{
 	width: 108px;
 	height: 101px;
 	display: none;
-	background: url(../img/d.png) no-repeat;
+	background: url(../img/h.png) no-repeat;
 	position: absolute;
 }
-
+.hit_img5{
+	width: 108px;
+	height: 101px;
+	background: url(../img/f.png) no-repeat;
+	display: none;
+	position: absolute;
+}
 
 
 
@@ -106,14 +114,14 @@
 	top:61%;
 }
 .start{
-	width:150px;
+	width:40%;
 	height: 50px;
 	border: 1px solid gainsboro;
 	border-radius:20% ;
 	background: navy;
 	position: absolute;
 	top: 70%;
-	left: 33%;
+	left: 30%;
 	opacity: 0.8;
 }
 .start_btn{
@@ -125,7 +133,7 @@
 	text-align: center;
 }
 .restart{
-	width: 400px;
+	max-width: 400px;
 	height: 600px;
 	border: 1px solid gainsboro;
 	background: black;
@@ -156,6 +164,27 @@
 	text-align: center;
 	background: palegreen;
 	font-size: 2em;
+	}
+.explain{
+	top:50% ;
+	left:10%;
+	width: 80%;
+	height: 100px;
+	color:white;
+	text-align: center;
+	background: navy;
+	font-size: 1em;
+	position: absolute;
+	opacity: 0.8
+	}
+.explain1{
+	margin-top:10% ;
+	width: 100%;
+	height: 100px;
+	color:white;
+	text-align: center;
+	background: navy;
+	font-size: 1em;
 	}
 .close{
 	width: 100%;

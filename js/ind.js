@@ -13,7 +13,7 @@ var downTimer_ = null;
 //初始图片索引-1；
 var imgNum = -1;
 //图片样式，hit_img1为歪风，hit_img为正气，歪风出现概率为80%；
-var img_class = ['hit_img1', 'hit_img2','hit_img','hit_img3', 'hit_img4']
+var img_class = ['hit_img1', 'hit_img','hit_img3','hit_img4', 'hit_img5','hit_img2']
 //判断是否击打
 var isHit = false;
 //分数
@@ -22,7 +22,7 @@ var score = 0;
 var rand=0,rand1=0;
 function random_() {
 	rand = parseInt(Math.random() * 9)
-	rand1 = parseInt(Math.random() * 5)
+	rand1 = parseInt(Math.random() * 6)
 }
 var classname = null;
 //为每个图片添加点击事件
@@ -58,6 +58,9 @@ function judge() {
 					score += 10;
 				}
 				if(classname == 'hit_img') {
+					score -= 10;
+				}
+				if(classname == 'hit_img5') {
 					score -= 10;
 				}
 				scoreItem.innerHTML = score + '分'
@@ -124,15 +127,16 @@ function progressTimer() {
 		if(progress_time <= 0) {
 			clearTimer();
 			gameReStart.style.display = 'block';
-			{if(score >= 80) {
-			scoring.innerHTML='总分:'+score+'分'+'，挑战成功';}
-			else{scoring.innerHTML='总分:'+score+'分'+'，挑战失败';}}
+			{if(score >= 90) {
+			scoring.innerHTML='总分:'+score+'分'+'，成功';}
+			else{scoring.innerHTML='总分:'+score+'分'+'，失败';}}
 		}
 	}, 100)
 }
 //界面
 var start_btn = document.querySelector(".start_btn");
 var gameStart = document.querySelector(".start");
+var expStart = document.querySelector(".explain");
 var Restart_btn = document.querySelector(".restart_btn");
 var gameReStart = document.querySelector(".restart");
 start_btn.onclick = start;
@@ -140,6 +144,7 @@ Restart_btn.onclick = restart;
 //开始游戏
 function start() {
 	gameStart.style.display = 'none'
+	expStart.style.display = 'none'
 	up();
 	click_();
 	random_();

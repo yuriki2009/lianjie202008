@@ -12,17 +12,17 @@ var upTimer = null;
 var downTimer_ = null;
 //初始图片索引-1；
 var imgNum = -1;
-//图片样式，hit_img为灰太狼，hit_img1为小灰灰，灰太狼出现概率为66.6%；
-var img_class = ['hit_img', 'hit_img1','hit_img']
+//图片样式，hit_img1为歪风，hit_img为正气，歪风出现概率为80%；
+var img_class = ['hit_img1', 'hit_img2','hit_img','hit_img3', 'hit_img4']
 //判断是否击打
 var isHit = false;
 //分数
 var score = 0;
-//rand代表灰太狼或者小灰灰出现洞口,rand1代表出现的是灰太狼还是小灰灰
+//rand代表歪风或者正气出现洞口,rand1代表出现的是歪风还是正气
 var rand=0,rand1=0;
 function random_() {
 	rand = parseInt(Math.random() * 9)
-	rand1 = parseInt(Math.random() * 3)
+	rand1 = parseInt(Math.random() * 5)
 }
 var classname = null;
 //为每个图片添加点击事件
@@ -30,7 +30,7 @@ function click_() {
 	for(var i = 0; i < hit_img.length; i++) {
 		hit_img[i].onclick = function() {
 			isHit = true;
-			//保存本次点击的图片的class名，用来判断点击的是灰太狼还是小灰灰
+			//保存本次点击的图片的class名，用来判断点击的是歪风还是正气
 			classname = this.className;
 			//进入判断
 			judge();
@@ -45,10 +45,19 @@ function judge() {
 		if(isHit) {
 			{	//当点击之后，让图片索引变为9，出现被打动画
 				imgNum = 9;
-				if(classname == 'hit_img') {
+				if(classname == 'hit_img1') {
 					score += 10;
 				}
-				if(classname == 'hit_img1') {
+				if(classname == 'hit_img2') {
+					score += 10;
+				}
+				if(classname == 'hit_img3') {
+					score += 10;
+				}
+				if(classname == 'hit_img4') {
+					score += 10;
+				}
+				if(classname == 'hit_img') {
 					score -= 10;
 				}
 				scoreItem.innerHTML = score + '分'
@@ -69,7 +78,7 @@ function up() {
 			hit_img[rand].style.backgroundPosition = -imgNum * 108 + 'px 0';
 		} else {
 			clearInterval(upTimer);
-			//灰太狼或小灰灰出洞口之后，停留一段时间在下去。
+			//歪风或正气出洞口之后，停留一段时间在下去。
 			upTimeout = setTimeout(function() {
 				down();
 			}, 500)
@@ -108,9 +117,10 @@ var progress_time = progress.offsetWidth;
 var scoring=document.querySelector(".scoring")
 function progressTimer() {
 	setInterval(function() {
-		progress_time--;
+		//progress_time--;
+		progress_time=progress_time-1.1;
 		progress.style.width = progress_time + 'px';
-		//		console.log(progress.style.width);
+				//console.log(progress.style.width);
 		if(progress_time <= 0) {
 			clearTimer();
 			gameReStart.style.display = 'block';
@@ -145,14 +155,14 @@ function restart() {
 	up();
 	click_();
 	random_();
-	progress_time=180;
+	progress_time=222;
 	progressTimer();
 	score=0;
 	scoreItem.innerHTML =  '0分';
 	scoring.innerHTML='总分:'+score+'分'
 }
-var game_over=document.querySelector(".close")
-game_over.onclick=function(){
-	window.close()
-}
+//	var game_over=document.querySelector(".close")
+//	game_over.onclick=function(){
+//		window.close()
+//	}
 

@@ -5,34 +5,34 @@
 #main{
 	background: url(../img/game_bg.jpg);
 	background-size:100% 100%;
-	width: 320px;
-	height: 480px;
+	width: 400px;
+	height: 600px;
 	margin: auto;
 	position: relative;
-	margin-top: 30px;
+	margin-top: 0px;
 }
 .progress{
-	width: 180px;
-	height: 16px;
+	width: 222px;
+	height: 21px;
 	background: url(../img/progress.png);
 	position: absolute;
-	top:66px;
-	left: 63.5px;
+	top:82px;
+	left: 79px;
 }
 .allScore{
 	width: 100px;
-	height: 30px;
+	height: 40px;
 	color: white;
 	position: absolute;
 	text-align: center;
-	line-height: 30px;
-	left: 30px;
+	line-height: 40px;
+	left: 40px;
 	top: 10px;
 }
 .hit_img{
 	width: 108px;
 	height: 101px;
-	background: url(../img/w.png) no-repeat;
+	background: url(../img/z.png) no-repeat;
 	display: none;
 	position: absolute;
 }
@@ -40,11 +40,34 @@
 	width: 108px;
 	height: 101px;
 	display: none;
-	background: url(../img/z.png) no-repeat;
+	background: url(../img/a.png) no-repeat;
 	position: absolute;
-	
-	
 }
+.hit_img2{
+	width: 108px;
+	height: 101px;
+	display: none;
+	background: url(../img/b.png) no-repeat;
+	position: absolute;
+}
+.hit_img3{
+	width: 108px;
+	height: 101px;
+	display: none;
+	background: url(../img/c.png) no-repeat;
+	position: absolute;
+}
+.hit_img4{
+	width: 108px;
+	height: 101px;
+	display: none;
+	background: url(../img/d.png) no-repeat;
+	position: absolute;
+}
+
+
+
+
 #main div:nth-child(1){
 	left:4%;
 	top: 32.5%;
@@ -86,11 +109,11 @@
 	width:150px;
 	height: 50px;
 	border: 1px solid gainsboro;
-	border-radius:10% ;
-	background: cyan;
+	border-radius:20% ;
+	background: navy;
 	position: absolute;
 	top: 70%;
-	left: 28%;
+	left: 33%;
 	opacity: 0.8;
 }
 .start_btn{
@@ -102,8 +125,8 @@
 	text-align: center;
 }
 .restart{
-	width: 320px;
-	height: 480px;
+	width: 400px;
+	height: 600px;
 	border: 1px solid gainsboro;
 	background: black;
 	opacity: 0.8;
